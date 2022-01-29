@@ -1194,6 +1194,7 @@
 # ----------------------------------------------------
 # colorchooser module
 # ----------------------------------------------------
+<<<<<<< HEAD
 from tkinter import *
 from tkinter import colorchooser
 
@@ -1205,3 +1206,539 @@ window.geometry("420x420")
 button = Button(text = 'Click me', command = click)
 button.pack()
 window.mainloop()
+=======
+# from tkinter import *
+# from tkinter import colorchooser
+
+# def click():
+#     window.config(bg = colorchooser.askcolor()[1])
+
+# window = Tk()
+# window.geometry("420x420")
+# button = Button(text = 'Click me', command = click)
+# button.pack()
+# window.mainloop()
+# ---------------------------------------------------
+# text area widget
+# ---------------------------------------------------
+# text widget = functions like a text area, you can enter multiple lines of text
+# from tkinter import *
+
+# def submit():
+#     input = text.get("1.0", END)
+#     print(input)
+
+# window = Tk()
+
+# text = Text(window,
+#             bg = "light yellow",
+#             font = ("Ink Free", 25),
+#             height = 8,
+#             width = 20,
+#             padx = 20,
+#             pady = 20,
+#             fg = "black")
+# text.pack()
+
+# button = Button(window,
+#                 command = submit,
+#                 text = "submit")
+# button.pack()
+
+# window.mainloop()
+# ---------------------------------------------------
+# file dialog
+# ---------------------------------------------------
+# from tkinter import *
+# from tkinter import filedialog
+
+# def openFile():
+#     file_path = filedialog.askopenfilename()
+#     file = open(file_path, 'r')
+#     print(file.read())
+#     file.close()
+
+# window = Tk()
+
+# button = Button(text = "Open",
+#                 command = openFile)
+# button.pack()
+
+# window.mainloop()
+# ----------------------------------------------------
+# save file
+# ----------------------------------------------------
+# from tkinter import *
+# from tkinter import filedialog
+
+# def saveFile():
+#     file = filedialog.asksaveasfile()
+#     filetext = str(text.get("1.0", END))
+#     file.write(filetext)
+#     file.close()
+
+# window = Tk()
+# button = Button(text = "Save", command = saveFile)
+# button.pack()
+# text = Text(window)
+# text.pack()
+# window.mainloop()
+# ----------------------------------------------------
+# menu bar
+# ----------------------------------------------------
+# from tkinter import *
+# window = Tk()
+
+# def open_file():
+#     print("File has been opened!")
+
+# def save_file():
+#     print("File has been saved!")
+
+# def cut():
+#     print("You cut some text!")
+
+# def copy():
+#     print("You copied some text!")
+
+# def past():
+#     print("You pasted some text!")
+
+# menubar = Menu(window)
+# window.config(menu=menubar)
+
+# fileMenu = Menu(menubar, tearoff = 0)
+# menubar.add_cascade(label="File", menu = fileMenu)
+# fileMenu.add_command(label = "Open", command = open_file)
+# fileMenu.add_command(label = "Save", command = save_file)
+# fileMenu.add_separator()
+# fileMenu.add_command(label = "Exit", command = quit)
+
+# editMenu = Menu(menubar, tearoff = 0)
+# menubar.add_cascade(label = "Edit", menu = editMenu)
+# editMenu.add_command(label = "Cut", command = cut)
+# editMenu.add_command(label = "Copy", command = copy)
+# editMenu.add_comamnd(label = "Paste", command = paste)
+
+# window.mainloop()
+# ----------------------------------------------------
+# frame
+# ----------------------------------------------------
+# frame = a rectangular container to group and hold widgets
+# from tkinter import *
+
+# window = Tk()
+
+# Button(window, text = "W", font = ("Fira Mono", 25), width = 3).pack(side = TOP)
+# Button(window, text = "A", font = ("Fira Mono", 25), width = 3).pack(side = LEFT)
+# Button(window, text = "S", font = ("Fira Mono", 25), width = 3).pack(side = LEFT)
+# Button(window, text = "D", font = ("Fira Mono", 25), width = 3).pack(side = LEFT)
+
+# window.mainloop()
+# ----------------------------------------------------
+# create new window
+# ----------------------------------------------------
+# from tkinter import *
+
+# def create_window():
+#     new_window = Tk()
+#     old_window.destroy()
+# old_window = Tk()
+# Button(old_window, text = "Create new window", command = create_window).pack()
+# old_window.mainloop()
+# ----------------------------------------------------
+# separate tabs
+# ----------------------------------------------------
+# from tkinter import *
+# from tkinter import ttk
+
+# window = Tk()
+
+# notebook = ttk.Notebook(window) # widget that manages a collection of windows/displays
+
+# tab1 = Frame(notebook) # new frame for tab 1
+# tab2 = Frame(notebook) # new frame for tab 2
+
+# notebook.add(tab1, text = "Tab 1")
+# notebook.add(tab2, text = "Tab 2")
+# notebook.pack(expand = True, fill = "both") # expand = expand to fill any space not otherwise
+#                                             # fill = fill space on x and y axis
+
+# Label(tab1, text = "Hello, this is tab #1", width = 50, height = 25).pack()
+# Label(tab2, text = "Goodbye, this is tab#2", width = 50, height = 25).pack()
+
+# window.mainloop()
+# ----------------------------------------------------
+# grid geometry manager
+# ----------------------------------------------------
+# grid() = geometry manager that organizes widgets in a table-like structure in a parent-table
+# from tkinter import *
+
+# window = Tk()
+
+# titleLabel = Label(window, text = "Enter your info!", font = ("Fira Mono", 25)).grid(row = 0, column = 0, columnspan = 2)
+
+# firstNameLabel = Label(window, text = "First name: ", bg = "Red").grid(row = 1, column = 0)
+# firstNameEntry = Entry(window).grid(row = 1, column = 1)
+
+# lastNameLabel = Label(window, text = "Last name: ", bg = "Blue").grid(row = 2, column = 0)
+# lastNameEntry = Entry(window).grid(row = 2, column = 1)
+
+# submitButton = Button(window, text = "SUBMIT", command = submit).grid(row = 4, column = 0, columnspan = 2)
+
+# window.mainloop()
+# ----------------------------------------------------
+# progress bar
+# ----------------------------------------------------
+# from tkinter import *
+# from tkinter.ttk import *
+# import time
+
+# def start():
+#     GB = 100
+#     download = 0
+#     speed = 1
+#     while (download<GB):
+#         time.sleep(0.05)
+#         bar['value'] +=(speed/GB) * 100
+#         download += speed
+#         percent.set(str(int((download/GB) * 100)) + "%")
+#         text.set(str(download) + "/" + str(GB) + " GB completed")
+#         window.update_idletasks()
+
+# window = Tk()
+
+# percent = StringVar()
+# text = StringVar()
+
+# bar = Progressbar(window, orient = HORIZONTAL, length = 300)
+# bar.pack(pady=10)
+
+# percentLabel = Label(window, textvariable = percent).pack()
+# taskLabel = Label(window, textvariable = text).pack()
+
+# button = Button(window, text = "Download", command = start).pack()
+
+# window.mainloop()
+# ----------------------------------------------------
+# canvas
+# ----------------------------------------------------
+# from tkinter import *
+# window = Tk()
+# canvas = Canvas(window, height = 500, width = 500)
+# # canvas.create_line(0, 0, 500, 500, fill = "Black", width = 5)
+# # canvas.create_line(0, 500, 500, 0, fill = "Black", width = 5)
+# # canvas.create_rectangle(50,50,250,250)
+# # canvas.create_rectangle(100,100,250,250)
+# # canvas.create_rectangle(200,200,250,250)
+# canvas.create_polygon(250,0,500,500,0,500,fill = "Yellow", outline = "Black", width = 5)
+# canvas.pack()
+# window.mainloop()
+# ----------------------------------------------------
+# keyboard events
+# ----------------------------------------------------
+# from tkinter import *
+
+# def doSomething(event):
+#    # print("You pressed: " + event.keysym)
+#    label.config(text = event.keysym)
+
+# window = Tk()
+
+# window.bind("<Key>", doSomething)
+# label = Label(window, font = ("Fira Mono", 100))
+# label.pack()
+
+# window.mainloop()
+# --------------------------------------------------
+# mouse events
+# --------------------------------------------------
+# from tkinter import *
+
+# def doSomething(event):
+#     print("You did a thing!")
+
+# window = Tk()
+
+# # window.bind("<Button-1>", doSomething)
+# # window.bind("<Button-2>", doSomething)
+# # window.bind("<Button-3>", doSomething)
+# # window.bind("<ButtonRelease>", doSomething)
+# # window.bind("<Enter>", doSomething)
+# # window.bind("<Leave>", doSomething)
+# # window.bind("<Motion>", doSomething)
+
+
+# window.mainloop()
+# --------------------------------------------------
+# drag and drop widgets
+# --------------------------------------------------
+# from tkinter import *
+
+# def drag_start(event):
+#     widget = event.widget
+#     widget.startX = event.x
+#     widget.startY = event.y
+
+# def drag_motion(event):
+#     widget = event.widget
+#     x = widget.winfo_x() - widget.startX + event.x
+#     y = widget.winfo_y() - widget.startY + event.y
+#     widget.place(x=x,y=y)
+
+# window = Tk()
+
+# label = Label(window, bg = "red", width = 10, height = 5)
+# label.place(x = 0, y = 0)
+
+# label2 = Label(window, bg = "blue", width = 10, height = 5)
+# label2.place(x = 100, y = 100)
+
+# label.bind("<Button-1>",drag_start)
+# label.bind("<B1-Motion>",drag_motion)
+
+# label2.bind("<Button-1>",drag_start)
+# label2.bind("<B1-Motion>",drag_motion)
+
+# window.mainloop()
+# ---------------------------------------------------
+# how to move images, widgets, or canvas
+# ---------------------------------------------------
+# from tkinter import *
+
+# def move_up(event):
+#    label.place(x=label.winfo_x(), y=label.winfo_y()-10)
+
+# def move_down(event):
+#    label.place(x=label.winfo_x(), y=label.winfo_y()+10)
+
+# def move_left(event):
+#    label.place(x=label.winfo_x()-10, y=label.winfo_y())
+
+# def move_right(event):
+#    label.place(x=label.winfo_x()+10, y=label.winfo_y())
+
+# window = Tk()
+# window.geometry("500x500")
+
+# window.bind("<w>",move_up)
+# window.bind("<s>",move_down)
+# window.bind("<a>",move_left)
+# window.bind("<d>",move_right)
+# window.bind("<Up>",move_up)
+# window.bind("<Down>",move_down)
+# window.bind("<Left>",move_left)
+# window.bind("<Right>",move_right)
+
+# myimage = PhotoImage(file='racecar.png')
+#
+# label = Label(window,image=myimage)
+# label.place(x=0,y=0)
+
+# window.mainloop()
+# ------------------------------------------------------
+# animations
+# ------------------------------------------------------
+# from tkinter import *
+# import time
+
+# WIDTH = 500
+# HEIGHT = 500
+# xVelocity = 1
+# yVelocity = 1
+
+# window = Tk()
+
+# canvas = Canvas(window, width = WIDTH, height = HEIGHT)
+# canvas.pack()
+
+# photo_image = PhotoImage(file = 'path/to/image.png')
+# my_image = canvas.create_image(0,0, image = photo_image, anchor = NW)
+
+# image_width = photo_image.width()
+# image_height = photo_image.height()
+
+# while True:
+#     coordinates = canvas.coords(my_image)
+#     print(coordinates)
+#     if(coordinates[0]>=(WIDTH-image_width) or coordinates[0]<0)
+#         xVelocity = -xVelocity
+#     if(coordinates[1]>=(HEIGHT-image_height) or coordinates[1]<0)
+#         yVelocity = -yVelocity
+#     canvas.move(my_image,xVelocity,yVelocity)
+#     window.update()
+#     time.sleep(0.01)
+
+# window.mainloop()
+# ----------------------------------------------------
+# clock
+# ----------------------------------------------------
+# from tkinter import *
+# from time import *
+
+# def update():
+#     time_string = strftime("%I:%M:%S %p")
+#     time_label.config(text = time_string)
+#     time_label.after(1000,update)
+
+# window = Tk()
+
+# time_label = Label(window, font = ("Fira Mono", 50), fg = "Green", bg = "Black")
+# time_label.pack()
+
+# update()
+
+# window.mainloop()
+# ----------------------------------------------------
+# send email
+# ----------------------------------------------------
+# import smtplib
+
+# sender = "sender@gmail.com"
+# receiver = "receiver@gmail.com"
+# password = "password123"
+# subject = "Python email test"
+# body =  "I wrote an email! :D"
+
+# message = f"""From: Snoop Dogg {sender}
+# To: Nicholas Cage{receiver}
+# Subject: {subject}\n
+# {body}
+# """
+
+# server = smtplib.SMTP("smtp.gmail.com", 587)
+# server.starttls()
+
+# try:
+#     server.login(sender, password)
+#     print("Logged in...")
+#     server.sendmail(sender,receiver,message)
+#     print("Email has been sent!")
+# except smtplib.SMTPAuthenticationError:
+#     print("Unable to sign in!")
+# ------------------------------------------------
+# run py program with terminal
+# ------------------------------------------------
+# print("Hello World!")
+
+# name = input("What's your name?: ")
+# print("Hello " + name)
+# ------------------------------------------------
+# pip installer
+# ------------------------------------------------
+# pip = package manager for packages and modules from Python Package Index
+#
+#       included for Python versions 3.4+
+#       open command prompt
+#
+#       help:                        pip
+#       check:                       pip --version
+#       update:                      pip install --upgrade pip
+#       installed packages:          pip list
+#       check outdated packages:     pip list --outdated
+#       update a package:            pip install "package name" --upgrade
+#       install a package:           pip install "package name"
+# ------------------------------------------------
+# calculator
+# ------------------------------------------------
+# from tkinter import *
+
+# def button_press(num):
+#     global equation_text
+#     equation_text = equation_text + str(num)
+#     equation_label.set(equation_text)
+
+# def equals():
+#     global equation_text
+#     total = str(eval(equation_text))
+#     equation_label.set(total)
+#     equation_text = total
+
+# def clear():
+#     pass
+
+# window = Tk()
+# window.title("Calculator program")
+# window.geometry("500x500")
+
+# equation_text = ""
+# equation_label = StringVar()
+
+# label = Label(window, textvariable = equation_label, font = ("Fira Mono", 20), bg = "White", width = 24, height = 2)
+# label.pack()
+
+# frame = Frame(window)
+# frame.pack()
+
+# button1 = Button(frame, text = 1, height = 4, width = 9, font = 35,
+#                  command = lambda: button_press(1))
+# button1.grid(row = 0, column = 0)
+
+# button2 = Button(frame, text = 2, height = 4, width = 9, font = 35,
+#                  command = lambda: button_press(2))
+# button2.grid(row = 0, column = 1)
+
+# button3 = Button(frame, text = 3, height = 4, width = 9, font = 35,
+#                  command = lambda: button_press(3))
+# button3.grid(row = 0, column = 2)
+
+# button4 = Button(frame, text = 4, height = 4, width = 9, font = 35,
+#                  command = lambda: button_press(4))
+# button4.grid(row = 1, column = 0)
+
+# button5 = Button(frame, text = 5, height = 4, width = 9, font = 35,
+#                  command = lambda: button_press(5))
+# button5.grid(row = 1, column = 1)
+
+# button6 = Button(frame, text = 6, height = 4, width = 9, font = 35,
+#                  command = lambda: button_press(6))
+# button6.grid(row = 1, column = 2)
+
+# button7 = Button(frame, text = 7, height = 4, width = 9, font = 35,
+#                  command = lambda: button_press(7))
+# button7.grid(row = 2, column = 0)
+
+# button8 = Button(frame, text = 8, height = 4, width = 9, font = 35,
+#                  command = lambda: button_press(8))
+# button8.grid(row = 2, column = 1)
+
+# button9 = Button(frame, text = 9, height = 4, width = 9, font = 35,
+#                  command = lambda: button_press(9))
+# button9.grid(row = 2, column = 2)
+
+# button0 = Button(frame, text = 0, height = 4, width = 9, font = 35,
+#                  command = lambda: button_press(0))
+# button0.grid(row = 3, column = 0)
+
+# plus = Button(frame, text = '+', height = 4, width = 9, font = 35,
+#                  command = lambda: button_press('+'))
+# plus.grid(row = 0, column = 3)
+
+# minus = Button(frame, text = '-', height = 4, width = 9, font = 35,
+#                  command = lambda: button_press('-'))
+# minus.grid(row = 1, column = 3)
+
+# multiply = Button(frame, text = '*', height = 4, width = 9, font = 35,
+#                  command = lambda: button_press('*'))
+# multiply.grid(row = 2, column = 3)
+
+# divide = Button(frame, text = '/', height = 4, width = 9, font = 35,
+#                  command = lambda: button_press('/'))
+# divide.grid(row = 3, column = 3)
+
+# equal = Button(frame, text = '=', height = 4, width = 9, font = 35,
+#                  command = lambda: button_press('='))
+# equal.grid(row = 3, column = 2)
+
+# decimal = Button(frame, text = '.', height = 4, width = 9, font = 35,
+#                  command = lambda: button_press('.'))
+# decimal.grid(row = 3, column = 1)
+
+# clear = Button(window, text = 'clear', height = 4, width = 12, font = 35,
+#                  command = clear)
+# clear.pack()
+
+# window.mainloop()
+# ------------------------------------------------------------
+# text editor
+# ------------------------------------------------------------
